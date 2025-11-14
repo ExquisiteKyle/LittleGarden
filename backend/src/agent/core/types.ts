@@ -16,7 +16,8 @@ export enum ToolName {
   HIGHLIGHT_UI_ELEMENT = 'highlight_ui_element',
   CHECK_APP_STATE = 'check_app_state',
   HIGHLIGHT_TILE = 'highlight_tile',
-  SET_OBJECTIVE = 'set_objective'
+  SET_OBJECTIVE = 'set_objective',
+  UNLOCK_ABILITY = 'unlock_ability'
 }
 
 export enum ToolAction {
@@ -25,7 +26,8 @@ export enum ToolAction {
   CHECK_STATE = 'check_state',
   CHECK_GAME_STATE = 'check_game_state',
   HIGHLIGHT_TILE = 'highlight_tile',
-  SET_OBJECTIVE = 'set_objective'
+  SET_OBJECTIVE = 'set_objective',
+  UNLOCK_ABILITY = 'unlock_ability'
 }
 
 export interface UserProgress {
@@ -49,6 +51,7 @@ export interface AgentResponse {
     tool: string;
     action: string;
     target?: string;
+    data?: any;
   }>;
   reasoning?: string;
 }
@@ -57,5 +60,6 @@ export interface TeachingPlan {
   nextFeature?: string;
   reason?: string;
   adaptPace?: boolean;
+  strategy?: string;
 }
 

@@ -97,6 +97,19 @@ export class ToolUse {
           },
           required: ['id']
         }
+      },
+      {
+        name: ToolName.UNLOCK_ABILITY,
+        description: translations.TOOL_DESCRIPTIONS.UNLOCK_ABILITY,
+        parameters: {
+          type: 'object',
+          properties: {
+            canInteract: { type: 'boolean', description: translations.TOOL_PARAM_DESCRIPTIONS.CAN_INTERACT },
+            canCollect: { type: 'boolean', description: translations.TOOL_PARAM_DESCRIPTIONS.CAN_COLLECT },
+            canOpenChest: { type: 'boolean', description: translations.TOOL_PARAM_DESCRIPTIONS.CAN_OPEN_CHEST },
+            canFight: { type: 'boolean', description: translations.TOOL_PARAM_DESCRIPTIONS.CAN_FIGHT }
+          }
+        }
       }
     ];
 
@@ -146,6 +159,18 @@ export class ToolUse {
 
     if (toolName === ToolName.SET_OBJECTIVE) {
       return { action: ToolAction.SET_OBJECTIVE, data: { id: args.id } };
+    }
+
+    if (toolName === ToolName.UNLOCK_ABILITY) {
+      return { 
+        action: ToolAction.UNLOCK_ABILITY, 
+        data: { 
+          canInteract: args.canInteract,
+          canCollect: args.canCollect,
+          canOpenChest: args.canOpenChest,
+          canFight: args.canFight
+        } 
+      };
     }
 
     throw new Error(`Unknown tool: ${toolName}`);

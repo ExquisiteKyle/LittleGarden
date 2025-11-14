@@ -5,7 +5,8 @@
     "HIGHLIGHT_UI_ELEMENT": "Highlight a specific UI element to guide the user",
     "CHECK_APP_STATE": "Check the current state of the application",
     "HIGHLIGHT_TILE": "Highlight a grid tile by coordinates (frontend applies visual highlight)",
-    "SET_OBJECTIVE": "Set or update the current tutorial objective identifier"
+    "SET_OBJECTIVE": "Set or update the current tutorial objective identifier",
+    "UNLOCK_ABILITY": "Unlock player abilities (canInteract, canCollect, canOpenChest, canFight)"
   },
   "TOOL_PARAM_DESCRIPTIONS": {
     "FEATURE": "The feature to check progress for",
@@ -15,7 +16,11 @@
     "CHECK_TYPE": "What aspect of app state to check",
     "TILE_X": "Tile X coordinate",
     "TILE_Y": "Tile Y coordinate",
-    "OBJECTIVE_ID": "Objective id, e.g., \"move\",\"talk\",\"loot\",\"strike\""
+    "OBJECTIVE_ID": "Objective id, e.g., \"move\",\"talk\",\"loot\",\"strike\"",
+    "CAN_INTERACT": "Allow player to talk to NPCs (true/false)",
+    "CAN_COLLECT": "Allow player to collect items (true/false)",
+    "CAN_OPEN_CHEST": "Allow player to open chests (true/false)",
+    "CAN_FIGHT": "Allow player to attack enemies (true/false)"
   }
 }
 

@@ -56,5 +56,41 @@ export class Memory {
     if (progress.struggles.includes(feature)) return;
     progress.struggles.push(feature);
   }
+
+  getLearningPattern = (userId: string): {
+    pace: 'slow' | 'normal' | 'fast';
+    masteryRate: number;
+    struggleAreas: string[];
+  } => {
+    const progress = this.getUserProgress(userId);
+    const history = this.getConversationHistory(userId);
+    
+    const totalInteractions = history.length / 2; // Each interaction is user + assistant
+    const featuresLearned = progress.featuresLearned.length;
+    const masteryRate = totalInteractions > 0 ? featuresLearned / totalInteractions : 0;
+    
+    let pace: 'slow' | 'normal' | 'fast' = 'normal';
+    if (masteryRate > 0.5) pace = 'fast';
+    else if (masteryRate < 0.2) pace = 'slow';
+
+    return {
+      pace,
+      masteryRate,
+      struggleAreas: progress.struggles
+    };
+  }
+
+  markFeatureMastered = (userId: string, feature: string): void => {
+    this.markFeatureLearned(userId, feature);
+    const progress = this.getUserProgress(userId);
+    if (progress.featuresMastered.includes(feature)) return;
+    progress.featuresMastered.push(feature);
+    
+    // Remove from struggles if mastered
+    const struggleIndex = progress.struggles.indexOf(feature);
+    if (struggleIndex > -1) {
+      progress.struggles.splice(struggleIndex, 1);
+    }
+  }
 }
 
