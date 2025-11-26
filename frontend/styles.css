@@ -1,0 +1,427 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #000;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#game-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+#phaser-game {
+    width: 50vw;
+    height: 50vh;
+}
+
+#phaser-game canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+
+.game-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.feature-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.feature-section:last-child {
+    border-bottom: none;
+}
+
+.feature-section h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background: #2980b9;
+}
+
+.nav-btn.active {
+    background: #27ae60;
+}
+
+.page-content {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    min-height: 100px;
+}
+
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.task-input button {
+    padding: 10px 20px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-list li {
+    padding: 10px;
+    background: #f9f9f9;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-list li button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.calculator {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.calculator input,
+.calculator select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.calculator button {
+    padding: 10px 20px;
+    background: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.calc-result {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.settings label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings button {
+    padding: 10px 20px;
+    background: #34495e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.tutorial-panel {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 200px);
+}
+
+.tutorial-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.tutorial-header h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.progress-indicator {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.message.user {
+    background: #3498db;
+    color: white;
+    margin-left: 20%;
+}
+
+.message.assistant {
+    background: #ecf0f1;
+    color: #333;
+    margin-right: 20%;
+}
+
+.message .reasoning {
+    margin-top: 5px;
+    font-size: 0.85em;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.chat-input-container button {
+    padding: 10px 20px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.highlight {
+    outline: 3px solid #f39c12;
+    outline-offset: 2px;
+    transition: outline 0.3s;
+}
+
+/* RPG Styles */
+.rpg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.game-stats {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hp-bar-container {
+    position: relative;
+    width: 150px;
+    height: 20px;
+    background: #2c3e50;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 2px solid #34495e;
+}
+
+.hp-bar {
+    height: 100%;
+    width: 100%;
+    background: #27ae60;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.hp-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.stats-text {
+    font-size: 12px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+
+
+.inventory-list {
+    font-size: 14px;
+    color: #34495e;
+    font-weight: bold;
+    min-height: 16px;
+}
+
+#phaser-game {
+    background: #2c3e50;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+#phaser-game canvas {
+    display: block;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.rpg-message {
+    min-height: 24px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.rpg-controls {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.rpg-controls p {
+    margin: 5px 0;
+}
+
+.credits {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 0.85em;
+    color: #888;
+}
+
+.credits a {
+    color: #666;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
