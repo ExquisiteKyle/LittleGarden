@@ -2,6 +2,28 @@
 
 A miniature RPG with an AI-powered tutorial master NPC. Meet **Hestia**, your intelligent guide who demonstrates core AI agent capabilities: **Tool Use**, **Planning**, **Memory**, and **Reasoning** as she teaches you how to play through natural conversation.
 
+### Gameplay Demo
+
+<p align="center">
+  <strong>Introduction & Interaction</strong><br>
+  <img src="./docs/demo-intro.gif" alt="Introduction" width="600" />
+</p>
+
+<p align="center">
+  <strong>Item Collection & Chest Opening</strong><br>
+  <img src="./docs/demo-items.gif" alt="Items" width="600" />
+</p>
+
+<p align="center">
+  <strong>Combat Preparation</strong><br>
+  <img src="./docs/demo-combat-prep.gif" alt="Combat Prep" width="600" />
+</p>
+
+<p align="center">
+  <strong>Combat & Victory</strong><br>
+  <img src="./docs/demo-combat.gif" alt="Combat" width="600" />
+</p>
+
 ## Overview
 
 Little Garden features Hestia, a specialized AI agent designed to guide adventurers through learning the game. Unlike static tutorials, Hestia:
